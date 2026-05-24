@@ -155,7 +155,7 @@ class _TransactionsScreenState extends ConsumerState<TransactionsScreen> {
                                     child: const Icon(Icons.delete_rounded, color: AppColors.expense),
                                   ),
                                   confirmDismiss: (_) async {
-                                    _deleteTransaction(txn);
+                                    await _deleteTransaction(txn);
                                     return false; // We handle deletion manually
                                   },
                                   child: ListTile(

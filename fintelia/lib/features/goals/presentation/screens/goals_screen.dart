@@ -136,7 +136,7 @@ class _GoalsScreenState extends ConsumerState<GoalsScreen> {
                     if (descCtrl.text.isNotEmpty) data['description'] = descCtrl.text.trim();
                     if (deadline != null) data['deadline'] = deadline!.toIso8601String().substring(0, 10);
 
-                    final success = await ref.read(goalProvider.notifier).createGoal(data);
+                    await ref.read(goalProvider.notifier).createGoal(data);
                     if (ctx.mounted) Navigator.pop(ctx);
                   },
                   child: const Text('Create Goal'),
@@ -213,7 +213,6 @@ class _GoalCard extends StatelessWidget {
     final title = goal['title']?.toString() ?? '';
     final target = (goal['target_amount'] as num?)?.toDouble() ?? 0;
     final current = (goal['current_amount'] as num?)?.toDouble() ?? 0;
-    final remaining = (goal['remaining'] as num?)?.toDouble() ?? 0;
     final pct = (goal['completion_percent'] as num?)?.toDouble() ?? 0;
     final monthlyReq = goal['monthly_required'] as num?;
     final projected = goal['projected_completion']?.toString();

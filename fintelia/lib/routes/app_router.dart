@@ -10,13 +10,13 @@ import 'package:fintelia/features/auth/presentation/screens/login_screen.dart';
 import 'package:fintelia/features/auth/presentation/screens/register_screen.dart';
 // ---- Auth Screens ----
 import 'package:fintelia/features/auth/presentation/screens/splash_screen.dart';
+import 'package:fintelia/features/behavioral/presentation/screens/behavioral_screen.dart';
 import 'package:fintelia/features/budgets/presentation/screens/budgets_screen.dart';
 // ---- Main Feature Screens ----
 import 'package:fintelia/features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'package:fintelia/features/goals/presentation/screens/goals_screen.dart';
 import 'package:fintelia/features/profile/presentation/screens/profile_screen.dart';
 import 'package:fintelia/features/settings/presentation/screens/settings_screen.dart';
-import 'package:fintelia/features/behavioral/presentation/screens/behavioral_screen.dart';
 import 'package:fintelia/features/transactions/presentation/screens/add_transaction_screen.dart';
 import 'package:fintelia/features/transactions/presentation/screens/transactions_screen.dart';
 import 'package:fintelia/routes/route_names.dart';
