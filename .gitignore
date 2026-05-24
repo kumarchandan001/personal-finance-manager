@@ -1,0 +1,71 @@
+# ============================================
+# FINTELIA — Root .gitignore
+# Flutter + Python + IDE + OS
+# ============================================
+
+# ---- OS Generated ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ---- Environment Variables ----
+.env
+.env.local
+.env.*.local
+*.env
+
+# ---- Flutter / Dart ----
+fintelia/.dart_tool/
+fintelia/.packages
+fintelia/build/
+fintelia/.flutter-plugins
+fintelia/.flutter-plugins-dependencies
+fintelia/.pub-cache/
+fintelia/.pub/
+fintelia/pubspec.lock
+
+# ---- Android ----
+fintelia/android/.gradle/
+fintelia/android/local.properties
+fintelia/android/*.iml
+fintelia/android/key.properties
+fintelia/android/app/release/
+fintelia/android/app/debug/
+
+# ---- Python / Backend ----
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/venv/
+backend/.venv/
+backend/env/
+backend/*.egg-info/
+backend/dist/
+backend/build/
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Coverage ----
+coverage/
+.coverage
+htmlcov/

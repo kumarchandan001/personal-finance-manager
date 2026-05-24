@@ -1,0 +1,50 @@
+# ============================================
+# FINTELIA — Docker Compose
+# Local development services
+# ============================================
+
+version: "3.9"
+
+services:
+  # ---- PostgreSQL Database ----
+  db:
+    image: postgres:16-alpine
+    container_name: fintelia_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fintelia
+      POSTGRES_PASSWORD: fintelia123
+      POSTGRES_DB: fintelia_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fintelia -d fintelia_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---- FastAPI Backend ----
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fintelia_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://fintelia:fintelia123@db:5432/fintelia_db
+      SECRET_KEY: dev-secret-key-not-for-production-use
+      ENVIRONMENT: development
+      DEBUG: "true"
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  postgres_data:
