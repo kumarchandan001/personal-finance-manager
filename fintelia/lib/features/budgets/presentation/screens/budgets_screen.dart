@@ -27,7 +27,6 @@ class _BudgetsScreenState extends ConsumerState<BudgetsScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final state = ref.watch(budgetProvider);
     final overview = ref.watch(budgetOverviewProvider);
     final progress = ref.watch(budgetProgressProvider);
     final currFmt = NumberFormat.currency(symbol: '₹', decimalDigits: 0);
@@ -211,7 +210,6 @@ class _BudgetProgressCard extends StatelessWidget {
     final category = budget['category']?.toString() ?? '';
     final limit = (budget['amount_limit'] as num?)?.toDouble() ?? 0;
     final spent = (budget['spent_amount'] as num?)?.toDouble() ?? 0;
-    final remaining = (budget['remaining'] as num?)?.toDouble() ?? 0;
     final util = (budget['utilization_percent'] as num?)?.toDouble() ?? 0;
     final status = budget['status']?.toString() ?? 'healthy';
     final daysLeft = (budget['remaining_days'] as num?)?.toInt() ?? 0;

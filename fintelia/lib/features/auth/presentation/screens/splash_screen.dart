@@ -57,7 +57,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     try {
       await Future.wait([authCheck, minSplash]).timeout(const Duration(seconds: 3));
     } catch (e) {
-      debugPrint("Splash screen timeout bypassed: $e");
+      debugPrint('Splash screen timeout bypassed: $e');
     }
 
     if (!mounted) return;
