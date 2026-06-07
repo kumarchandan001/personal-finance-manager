@@ -15,13 +15,16 @@ FINTELIA combines transaction tracking, budgeting, goals, analytics, subscriptio
 
 ### Core Capabilities
 
-- Smart expense tracking with categorized transactions
-- AI financial assistant for personalized suggestions
-- Behavioral finance insights (spending patterns, impulse signals)
-- Predictive analytics for trends and risk indicators
-- Budget tracking with intelligent feedback
-- Goal planning with progress tracking
-- Subscription monitoring for recurring payments
+Smart expense tracking with automatic categorization.
+AI financial assistant for personalized money management.
+Budget creation and real-time spending monitoring.
+Spending pattern and behavioral finance analysis.
+Impulse purchase detection and financial insights.
+Predictive analytics for future expenses and cash flow.
+Goal planning with savings progress tracking.
+Subscription and recurring payment monitoring.
+Financial health score with intelligent recommendations.
+Interactive dashboard with reports, charts, and alerts.
 
 ---
 
